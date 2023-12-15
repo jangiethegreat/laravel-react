@@ -31,7 +31,7 @@ Route::get('/', function () {
 // });
 
 Route::get('/posts',[PostController::class, 'index'])->name ('post.index');
-
+Route::get('/posts/new',[PostController::class, 'new'])->name ('post.new');
 
 
 Route::get('/dashboard', function () {

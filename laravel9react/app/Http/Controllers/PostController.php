@@ -10,4 +10,9 @@ class PostController extends Controller
     {
         return Inertia::render('Posts/PostComponent');
     }
+
+    public function new()
+    {
+        return Inertia::render('Posts/NewComponent');
+    }
 }
