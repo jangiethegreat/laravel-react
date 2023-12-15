@@ -16,6 +16,12 @@ export default class NewComponent extends Component{
     handleClick=(e)=>{
         console.log("Button is clicked");
     }
+    handleMouseOver=(e)=>{
+        console.log(e.target, e.pageX,e.pageY);
+    }
+    handleCopy=(e)=>{
+        console.log('Paragraph has been copied!')
+    }
     render(){
         return(
             <div>
@@ -26,7 +32,10 @@ export default class NewComponent extends Component{
                 <p> Mobile: {this.state.mobile}</p>
                 <p> Skills: {this.state.skills.join(', ')}</p>
 
-                <button type='button' onClick={this.handleClick}>Click Here</button>
+                <button type='button' onClick={this.handleClick} onMouseOver={this.handleMouseOver}>Click Here</button>
+                <p onCopy={this.handleCopy}>
+                    This is a Test paragraph
+                </p>
             </div>
         )
     }
