@@ -22,6 +22,19 @@ export default class NewComponent extends Component{
     handleCopy=(e)=>{
         console.log('Paragraph has been copied!')
     }
+
+    handleChangeState=()=>{
+        this.setState({
+            name:'John',
+            age:23,
+            mobile:1111000000,
+            skills:[    
+                'javascript',
+                'laravel',
+                'react',
+            ]
+        })
+    }
     render(){
         return(
             <div>
@@ -36,6 +49,10 @@ export default class NewComponent extends Component{
                 <p onCopy={this.handleCopy}>
                     This is a Test paragraph
                 </p>
+
+                <button type='button' onClick={this.handleChangeState}>
+                    Change State
+                </button>
             </div>
         )
     }
