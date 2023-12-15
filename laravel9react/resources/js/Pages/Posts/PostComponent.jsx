@@ -4,7 +4,7 @@ export default function PostComponent()
 {
     return (
         <div>
-            <h1>Post Component</h1>
+            <h1>React Component with Controller</h1>
         </div>
     )
 }

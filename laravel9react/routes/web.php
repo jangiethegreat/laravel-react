@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,9 +26,13 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/posts',function(){
-    return Inertia::render('Posts/PostComponent');
-});
+// Route::get('/posts',function(){
+//     return Inertia::render('Posts/PostComponent');
+// });
+
+Route::get('/posts',[PostController::class, 'index'])->name ('post.index');
+
+
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
