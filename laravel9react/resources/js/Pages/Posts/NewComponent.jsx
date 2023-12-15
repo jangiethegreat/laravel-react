@@ -12,6 +12,10 @@ export default class NewComponent extends Component{
 
         ]
     }
+
+    handleClick=(e)=>{
+        console.log("Button is clicked");
+    }
     render(){
         return(
             <div>
@@ -21,6 +25,8 @@ export default class NewComponent extends Component{
                 <p> Age: {this.state.age}</p>
                 <p> Mobile: {this.state.mobile}</p>
                 <p> Skills: {this.state.skills.join(', ')}</p>
+
+                <button type='button' onClick={this.handleClick}>Click Here</button>
             </div>
         )
     }
