@@ -29,9 +29,9 @@ export default class NewComponent extends Component{
             age:23,
             mobile:1111000000,
             skills:[    
-                'javascript',
-                'laravel',
-                'react',
+                'php',
+                'html',
+                'css',
             ]
         })
     }
