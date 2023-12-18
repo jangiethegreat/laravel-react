@@ -35,6 +35,20 @@ export default class NewComponent extends Component{
             ]
         })
     }
+
+    handleChange=(e)=>{
+        this.setState({
+            [e.target.name]:e.target.value
+        });
+    }
+
+
+    handleSubmit=(e)=>{
+        e.preventDefault();
+        console.log('Name',this.state.name);
+        console.log('Age',this.state.age);
+        console.log('Mobile',this.state.mobile);
+    }
     render(){
         return(
             <div>
@@ -45,14 +59,15 @@ export default class NewComponent extends Component{
                 <p> Mobile: {this.state.mobile}</p>
                 <p> Skills: {this.state.skills.join(', ')}</p>
 
-                <button type='button' onClick={this.handleClick} onMouseOver={this.handleMouseOver}>Click Here</button>
-                <p onCopy={this.handleCopy}>
-                    This is a Test paragraph
-                </p>
+           
 
-                <button type='button' onClick={this.handleChangeState}>
-                    Change State
-                </button>
+                <form onSubmit={this.handleSubmit}>
+                    Name: <input type="text" name = "name" onChange={this.handleChange}/><br/>
+                    Age : <input type="text" name = "age" onChange={this.handleChange}/> <br/>
+                    Mobile : <input type = "text"  name = "mobile" onChange={this.handleChange}/> <br/>
+                    <button type="submit">Submit</button>
+
+                </form>
             </div>
         )
     }
